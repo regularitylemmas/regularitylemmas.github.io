@@ -45,6 +45,10 @@
   section + section { margin-top: 34px; }
   p { margin: 0 0 12px; }
   aside section { border-top: 3px solid var(--cardinal); padding-top: 12px; }
+  aside section + section { margin-top: 30px; }
+  aside section > :last-child { margin-bottom: 0; }
+  /* text has empty space below its last line; pull it up so the gap above each rule matches the gap below */
+  aside section > p:last-child { margin-bottom: -8px; }
   aside h2 { font-size: 19px; }
   .register { display: inline-block; margin-top: 4px; padding: 9px 22px; background: var(--cardinal); color: var(--on-cardinal); text-decoration: none; font-weight: 600; }
   .register:visited { color: var(--on-cardinal); }
@@ -502,11 +506,11 @@
       <p>The workshop is open to both in-person and virtual participants.</p>
       <a class="register" href="https://forms.gle/KPcaERWtx8R7kM2k9">Register</a>
     </section>
-    <section id="location" style="margin-top:30px">
+    <section id="location">
       <h2>Location</h2>
       <p>Gates Computer Science Building, Room 403<br>353 Jane Stanford Way, Stanford, CA 94305</p>
     </section>
-    <section id="organizers" style="margin-top:30px">
+    <section id="organizers">
       <h2>Organizers</h2>
       <ul>
         <li><a href="https://silviacasacuberta.com/">S&iacute;lvia Casacuberta</a><span class="aff">Stanford University</span></li>
