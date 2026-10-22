@@ -95,6 +95,21 @@
   .prog .ti { font-style: italic; }
   .prog .brk { color: var(--muted); font-style: italic; padding: 6px 0; }
   @media (max-width: 560px) { .prog li { grid-template-columns: minmax(0,1fr); } }
+  /* [+] Abstract, bracket first */
+  /* Abstract toggles */
+  details.abs { margin-top: 4px; }
+  details.abs > summary { list-style: none; cursor: pointer; width: fit-content; }
+  details.abs > summary::-webkit-details-marker { display: none; }
+  details.abs > summary:focus-visible { outline: 2px solid var(--cardinal); outline-offset: 3px; }
+  .abs-body { font-size: 16.5px; line-height: 1.55; }
+  .abs-body p { margin: 0 0 10px; }
+  .abs-body p:last-child { margin-bottom: 0; }
+  .abs-body mjx-container { font-size: 105%; }
+  details.abs > summary { color: var(--cardinal); font-size: 17px; font-weight: 600; }
+  details.abs > summary::before { content: "[+] "; font-weight: 700; }
+  details.abs[open] > summary::before { content: "[\2212] "; }
+  details.abs > summary:hover { text-decoration: underline; }
+  .abs-body { margin: 8px 0 4px; padding: 12px 16px; background: #faf7f7; }
 </style>
 </head>
 <body>
@@ -506,14 +521,14 @@
       <li class="talk"><span class="t">9:00 &ndash; 9:45am</span><div class="b"><p class="sp"><b>Princewill Okoroafor</b> (Harvard University)</p><p class="ti">The Sample Complexity of Multicalibration with an ERM Oracle</p></div></li>
       <li class="talk"><span class="t">9:45 &ndash; 10:30am</span><div class="b"><p class="sp"><b>Georgy Noarov</b> (Institute for Advanced Study)</p><p class="ti">Defensive Boosting for Online Probabilistic Forecasting</p></div></li>
       <li class="brk"><span class="t">10:30 &ndash; 11:00am</span><div class="b">Break</div></li>
-      <li class="talk"><span class="t">11:00 &ndash; 11:45am</span><div class="b"><p class="sp"><b>Cassandra Marcussen</b> (Harvard University)</p><p class="ti">Characterizing the Distinguishability of Product Distributions through Multicalibration</p></div></li>
-      <li class="talk"><span class="t">11:45am &ndash; 12:30pm</span><div class="b"><p class="sp"><b>Lunjia Hu</b> (Northeastern University)</p><p class="ti">Generalized and Unified Equivalences between Hardness and Pseudoentropy</p></div></li>
+      <li class="talk"><span class="t">11:00 &ndash; 11:45am</span><div class="b"><p class="sp"><b>Pranay Tankala</b> (Harvard University)</p><p class="ti">Agnostic Learning by Imitating</p></div></li>
+      <li class="talk"><span class="t">11:45am &ndash; 12:30pm</span><div class="b"><p class="sp"><b>Konstantinos Stavropoulos</b> (Institute for Advanced Study)</p><p class="ti">Learning under Contamination and Distribution Shift: Sharper Bounds via Multiaccuracy</p><details class="abs"><summary>Abstract</summary><div class="abs-body"><p>Standard learning objectives can lead to suboptimal error guarantees when training data are adversarially corrupted or the test distribution differs from the training distribution. In this talk, I will discuss how multiaccuracy and related notions of regularity can be used to obtain sharper error guarantees in both settings.</p><p>First, in the context of robust learning, I will describe how ideas from multiaccuracy, combined with no-regret optimization, lead to efficient algorithms achieving the information-theoretically optimal error of $\eta+\epsilon$ under an $\eta$-fraction of adversarial contamination, improving over the classical $2\eta+\epsilon$ bound.</p><p>I will then turn to learning with distribution shift, where we introduce shift multiaccuracy as a new error benchmark. This notion yields sharper domain adaptation bounds and leads to a strengthened formulation of testable learning with distribution shift, establishing new connections to the computational and statistical complexity of agnostic learning.</p></div></details></div></li>
       <li class="brk"><span class="t">12:30 &ndash; 1:30pm</span><div class="b">Lunch</div></li>
-      <li class="talk"><span class="t">1:30 &ndash; 2:15pm</span><div class="b"><p class="sp"><b>Madhur Tulsiani</b> (TTIC)</p><p class="ti">List Decoding Expander-Based Codes up to Capacity in Near-Linear Time</p></div></li>
-      <li class="talk"><span class="t">2:15 &ndash; 3:00pm</span><div class="b"><p class="sp"><b>Mark Bedaywi</b> (UC Berkeley)</p><p class="ti">Computationally Efficient Collaborative Communication via Regularity-Based Coarsening</p></div></li>
+      <li class="talk"><span class="t">1:30 &ndash; 2:15pm</span><div class="b"><p class="sp"><b>Cassandra Marcussen</b> (Harvard University)</p><p class="ti">Characterizing the Distinguishability of Product Distributions through Multicalibration</p></div></li>
+      <li class="talk"><span class="t">2:15 &ndash; 3:00pm</span><div class="b"><p class="sp"><b>Lunjia Hu</b> (Northeastern University)</p><p class="ti">Generalized and Unified Equivalences between Hardness and Pseudoentropy</p></div></li>
       <li class="brk"><span class="t">3:00 &ndash; 3:30pm</span><div class="b">Break</div></li>
-      <li class="talk"><span class="t">3:30 &ndash; 4:15pm</span><div class="b"><p class="sp"><b>Pranay Tankala</b> (Harvard University)</p><p class="ti">Agnostic Learning by Imitating</p></div></li>
-      <li class="talk"><span class="t">4:15 &ndash; 5:00pm</span><div class="b"><p class="sp"><b>Konstantinos Stavropoulos</b> (Institute for Advanced Study)</p><p class="ti">Learning under Contamination and Distribution Shift: Sharper Bounds via Multiaccuracy</p></div></li>
+      <li class="talk"><span class="t">3:30 &ndash; 4:15pm</span><div class="b"><p class="sp"><b>Madhur Tulsiani</b> (TTIC)</p><p class="ti">List Decoding Expander-Based Codes up to Capacity in Near-Linear Time</p></div></li>
+      <li class="talk"><span class="t">4:15 &ndash; 5:00pm</span><div class="b"><p class="sp"><b>Mark Bedaywi</b> (UC Berkeley)</p><p class="ti">Computationally Efficient Collaborative Communication via Regularity-Based Coarsening</p><details class="abs"><summary>Abstract</summary><div class="abs-body"><p>We will show that the existence of a short high-utility communication protocol already suffices for computationally efficient communication.</p><p>In particular, in a game with $n$ possible observations and $m$ actions, for any achievable target utility $\alpha$, we give an algorithm with $\mathrm{poly}(n, m, 1/\epsilon)$ runtime that designs a protocol achieving utility at least $\alpha-\epsilon$ using only $2^{\mathcal O(CC_\alpha(G))}/\epsilon^2$ bits of communication. Here, $CC_\alpha(G)$ is the minimum number of bits used by any protocol, even a computationally inefficient one, to achieve utility $\alpha$.</p><p>To do this, we generalize the weak regularity lemma and use it to show that for every communication game $G$, we can construct a game $\hat G$ that is a &ldquo;coarsening&rdquo; of the agents' observation spaces into constant-size partitions, such that $G$ and $\hat G$ are &ldquo;indistinguishable&rdquo; with respect to every short communication protocol.</p></div></details></div></li>
     </ol>
     </section>
   </main>
@@ -564,6 +579,10 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(align);
 })();
 </script>
+<script>
+window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js" defer></script>
 
 </body>
 </html>
